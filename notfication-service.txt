@@ -1,0 +1,9 @@
+## Reason to use the message broker
+  1. we have Booking which is highly scaled and our notification service 
+     not very highly scaled and also we don't want to send emails immediately
+     when the booking is created then if the notification service is getting 
+     high number of QPS then the load on the database will increase . so
+     if we use the message brokers the interaction with the notification service
+     is avoided and the notification service can pull each request from the meeage 
+     queue and send that emails.
+     

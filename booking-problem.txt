@@ -1,0 +1,15 @@
+Problem: Booking mechanism Implementation <--and it is has relation with --> Payments.
+  --> how to handle the concurrent bookings
+  scenarios:
+     1-> same seat selection
+     2-> payment is done first then seat selection. now only one seat left and 2 concurrent 
+         payments are done at the same time.
+  
+  --> To handle above race conditions we can use the below approaches:
+      1-> Isolation levels
+      2-> instead of that mysql provides some locks i.e Locking Mechanism
+      Different Types of locks :
+         1. 
+
+  --> 
+       

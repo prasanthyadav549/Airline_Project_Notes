@@ -1,0 +1,63 @@
+##Transaction:
+  --> States of the Transaction:
+         1: Begin
+         2: Commit
+         3: Rollback
+
+
+##Concurrent Transaction Execution Anamolies:
+   1. Read-write
+   2. Write-Read
+   3. Write-Write
+
+##. how databases ensures atomicity? 
+    --> Logging
+    --> shadow Paging
+    It handles roll back using:
+    --> undo Log
+    --> redo log
+    UNDO LOG: This log contains about the information about how to undo the
+              last changes done by the transaction.  
+    
+##Locking mechanism
+    --> Different Types of Locks:
+          -> Shared Lock: this allows multiple transactions to the read the data
+                          the at the same time but restricts any of them from writing.
+          
+          -> Exclusive Lock: This prevents the transactions to read or write the same 
+                             data at the same point of time.
+            
+          -> Intent Lock: This is used to specify that a transaction is planning to read 
+                          or write certain section of data.
+          
+          -> Row Level Lock: This allows the transaction to lock the specific row.
+
+    --> Mysql is MVCC: multi versioning concurrency control.
+                       -> it is compatable to allow multiple transaction to read 
+                          or write the same data without much conflict.
+
+
+## Different isolation levels
+   --> Read uncommited: it is lowest level which provides the ability for the 
+       users to access the same the data at the same point of time. here dirty
+       reads are possible.
+   
+   --> Read commited:Here dirty Reads is avoided , because any uncommitted changes
+                     are not visible to other transactions until we commit.
+                     in this level, each select statement will have its own snapshot
+                     this cab be problamatic if we execute same select statement because
+                     some other transaction might commit and update and we will get the 
+                     new data which causes the problem of NON-REPEATABLE READS problem.4
+    
+    --> Repeatable Reads: A snapshot of SELECT statement is taken first time it runs
+                          during the transaction and same snapshot is used throughout
+                          the transaction when same select is executed.
+    
+    --> Serializable: It completely avoids the effect of the one transaction from others.
+                      it is a repeatable reads with more isolation to avoid the phontom
+                      reads.
+                      in this level we can say that one transaction occurs after the other
+                      But this is good in Bookings as Booking is not a fast mechanism 
+
+                          
+

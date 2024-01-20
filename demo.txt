@@ -1,0 +1,25 @@
+## transactional systems.
+here we can use this Api not only for product recommendations
+in Aap we have multiple microservies running any service that want
+the customer segmentation data they can use this.
+for example there is a transaction happening using this api we
+can identify that the customer is high-worth customer 
+then this can also bring chance to provide extra discount.
+
+## introduction
+  * start with this: so far in Aap the Recommendation systems we are having
+    are static  instead of doing that using the machine learning Methadologies
+    supraja already did the customer segmentation.we want to leverage the segmentation
+    that has been done and improvise the recommendations in such a way that 
+    you can bring the more personalization to the recommendations per customer.
+    At the same time it is an oppurtunity for you to expose the data to enterprise.
+    
+ 
+  1-> removing the dynamic pricing 
+  by removing the above add this
+    * in Aap majority are transactional systems multiple micro services are running
+     in Real time when a transaction is happening if you want to know
+     what type of customer is and what are frequently brought items
+     you can use this.
+
+ 

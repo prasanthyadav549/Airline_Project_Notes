@@ -1,0 +1,37 @@
+Authentication : identifies that you are a valid user or not
+Authorization: Assigning functionalities and permissions and capabilities 
+               to different roles of different users.
+               Example: consider Flipkart you shop as a customer and you don't
+                        have access to the seller functionalities that other customer
+                        has and the admin have access to the both the functionalities.
+Passport.js library is highly used for the Authentication.
+JWT.io about the jwt and in our project we will use the jsonwebtoken library.
+
+APIGateway features and authorization class:
+        1. ApiGateway
+        2. Rate limiter
+        3. Acts as proxy
+        4. express-rate-limit package is there to implement rate limit.
+        5. understand the forward proxy and reverse proxy.
+
+Forward Proxy[FP]: FP sits between the client and the internet.
+                   Client requests the resource from the internet through forward proxy.
+                   which acts as a intermediate layer.
+                   why do we need the FP: 
+                      1. content filteration what content is sent through the servers.
+                      2. cacheing can be implemented at forward proxy.
+                      3. access control to clients.
+
+Reverse Proxy[RP]: RP sits between the internet and the servers.
+                   1. it helps to protect the origin server from direct client access.
+                   2. http-proxy-middleware package is used to implement the reverse proxy.
+
+in this class we are setting roles to implement the authorization
+   1. user to role we have many-to-many relationship
+   2. search sequelize many-to-many relationship to understand the relationship.
+   3. ENUMS in sequelize
+   4. this link has sequelize methods: https://medium.com/@julianne.marik/sequelize-associations-magic-methods-c72008db91c9
+   5. create a seed file to add-roles which command npx sequelize seed:generate --name add-roles.
+   6. the reason to add the roles as a seeaders file instead of creating APIS is they don't change often.
+   7. implement the authorization for flight update or delete apis also like if you 
+       are not admin or flight_company person you are not able to access the flight update or delete.
